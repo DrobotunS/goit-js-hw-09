@@ -3,7 +3,7 @@ const formRef = document.querySelector('.form');
 
   const handleSubmit = event => {
     event.preventDefault();
-    const {
+    let {
       elements: { delay, step, amount },
     } = event.currentTarget;
     delay = Number(delay.value);
