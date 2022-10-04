@@ -5,7 +5,7 @@ const formRef = document.querySelector('.form');
     event.preventDefault();
     const saveData = {
       elements: { delay, step, amount },
-    } = (event.currentTarget);
+    } = event.currentTarget;
     delay = Number(delay.value);
     step = Number(step.value);
     amount = Number(amount.value);
