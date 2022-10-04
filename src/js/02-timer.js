@@ -5,7 +5,7 @@ import { Notify } from "notiflix/build/notiflix-notify-aio";
 const selector = document.querySelector('input#datetime-picker')
 const btn = document.querySelector("button");
 btn.setAttribute('disabled', true);
-
+let deadLine = null;
 
 const options = {
     enableTime: true,
