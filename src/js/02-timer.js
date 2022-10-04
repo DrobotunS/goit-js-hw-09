@@ -55,6 +55,13 @@ if(ms <= 1000){
 
 btn.addEventListener('click', timer.start);
 
+const refs = {
+  daysRef: document.querySelector('[data-days]'),
+  hoursRef: document.querySelector('[data-hours]'),
+  minutesRef: document.querySelector('[data-minutes]'),
+  secondsRef: document.querySelector('[data-seconds]'),
+};
+
 function convertMs(ms) {
     const second = 1000;
     const minute = second * 60;
@@ -64,15 +71,9 @@ function convertMs(ms) {
     const hours = Math.floor((ms % day) / hour);
     const minutes = Math.floor(((ms % day) % hour) / minute);
     const seconds = Math.floor((((ms % day) % hour) % minute) / second);
-    const  refs = {
-      daysRef: document.querySelector('[data-days]'),
-      hoursRef: document.querySelector('[data-hours]'),
-      minutesRef: document.querySelector('[data-minutes]'),
-      secondsRef: document.querySelector('[data-seconds]'),
-    };
-    refs.daysRef.textContent = String(days).padStart(2, '0');
-    refs.hoursRef.textContent = String(hours).padStart(2, '0');
-    refs.minutesRef.textContent = String(minutes).padStart(2, '0');
-    refs.secondsRef.textContent = String(seconds).padStart(2, '0');
+  refs.daysRef.textContent = String(days).padStart(2, '0');
+  refs.hoursRef.textContent = String(hours).padStart(2, '0');
+  refs.minutesRef.textContent = String(minutes).padStart(2, '0');
+  refs.secondsRef.textContent = String(seconds).padStart(2, '0');
   };
-  
+ 

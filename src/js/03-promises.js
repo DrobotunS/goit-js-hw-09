@@ -16,10 +16,8 @@ const formRef = document.querySelector('.form');
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           if (shouldResolve) {
-            Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
             resolve({position, delay});
           }
-          Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
             reject({position, delay})
         }, delay)
       });
@@ -28,9 +26,11 @@ const formRef = document.querySelector('.form');
     for (let i = 0; i < amount; i++) {
       createPromise(i + 1, delay)
         .then(({ position, delay }) => {
+          Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
           console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
         })
         .catch(({ position, delay }) => {
+          Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
           console.log(`❌ Rejected promise ${position} in ${delay}ms`);
         });
       delay += step;
