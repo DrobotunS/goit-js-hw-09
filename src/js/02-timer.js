@@ -71,9 +71,12 @@ function convertMs(ms) {
     const hours = Math.floor((ms % day) / hour);
     const minutes = Math.floor(((ms % day) % hour) / minute);
     const seconds = Math.floor((((ms % day) % hour) % minute) / second);
-  refs.daysRef.textContent = String(days).padStart(2, '0');
-  refs.hoursRef.textContent = String(hours).padStart(2, '0');
-  refs.minutesRef.textContent = String(minutes).padStart(2, '0');
-  refs.secondsRef.textContent = String(seconds).padStart(2, '0');
+    RefsPadStar(days,hours, minutes, seconds);
   };
  
+  function RefsPadStar(days,hours, minutes, seconds) {
+    refs.daysRef.textContent = String(days).padStart(2, '0');
+    refs.hoursRef.textContent = String(hours).padStart(2, '0');
+    refs.minutesRef.textContent = String(minutes).padStart(2, '0');
+    refs.secondsRef.textContent = String(seconds).padStart(2, '0');
+  }
